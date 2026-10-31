@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Felix Algorithm — Portfolio</title>
+    <meta
+      name="description"
+      content="Editorial portfolio of Felix Algorithm (フェリックス) — Kemono fursuiter and developer from Hanoi."
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141414'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' fill='%23EFEEEB'%3EF%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      href="/img/hero-cutout.png"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Great+Vibes&family=Pinyon+Script&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Great+Vibes&family=Pinyon+Script&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&text=%E3%83%95%E3%82%A7%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B9%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B&display=swap"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Custom Cursor (pointer: fine only) -->
+    <div class="cursor" data-cursor aria-hidden="true">
+      <svg class="cursor__svg" viewBox="0 0 80 80" aria-hidden="true">
+        <circle cx="40" cy="40" r="39" />
+      </svg>
+    </div>
+    <div class="cursor-ring" data-cursor-ring aria-hidden="true">
+      <svg class="cursor-ring__svg" viewBox="0 0 80 80" aria-hidden="true">
+        <circle cx="40" cy="40" r="39" />
+      </svg>
+    </div>
+
+    <!-- SECTION 0 — PRELOADER -->
+    <div class="preloader" id="preloader" data-preloader aria-hidden="true">
+      <div class="preloader__stage" data-preloader-stage>
+        <div class="preloader__box" data-preloader-box>
+          <p class="preloader__katakana" lang="ja">
+            <span class="char-mask"><span class="preloader__char">フ</span></span>
+            <span class="char-mask"><span class="preloader__char">ェ</span></span>
+            <span class="char-mask"><span class="preloader__char">リ</span></span>
+            <span class="char-mask"><span class="preloader__char">ッ</span></span>
+            <span class="char-mask"><span class="preloader__char">ク</span></span>
+            <span class="char-mask"><span class="preloader__char">ス</span></span>
+          </p>
+          <div class="preloader__track">
+            <div class="preloader__bar" data-preloader-bar></div>
+          </div>
+          <div class="preloader__meta">
+            <span class="preloader__brand">FELIX ALGORITHM</span>
+            <span class="preloader__counter" data-preloader-count>000</span>
+          </div>
+        </div>
+      </div>
+      <div class="preloader__wipe" data-preloader-wipe>
+        <div class="preloader__col"></div>
+        <div class="preloader__col"></div>
+        <div class="preloader__col"></div>
+        <div class="preloader__col"></div>
+        <div class="preloader__col"></div>
+        <div class="preloader__col"></div>
+      </div>
+    </div>
+
+    <!-- STICKY HEADER (Appears from Section 3 onward) -->
+    <header class="site-header" data-header>
+      <div class="site-header__inner">
+        <a href="#hero" class="site-logo" data-scroll-to="#hero" data-cursor-label="TOP" aria-label="Felix Algorithm — Back to top">
+          <span class="site-logo__serif">Felix</span>
+          <span class="site-logo__script">A.</span>
+          <svg class="site-logo__pen" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M11.8 1.8L14.2 4.2L5.1 13.3L2 14L2.7 10.9L11.8 1.8Z" stroke="currentColor" stroke-width="1.1" />
+            <path d="M10.3 3.3L12.7 5.7" stroke="currentColor" stroke-width="1.1" />
+          </svg>
+        </a>
+
+        <nav class="site-nav" aria-label="Section navigation" data-nav>
+          <a href="#profil" class="site-nav__link is-active" data-nav-link="profil" data-scroll-to="#profil" data-cursor-label="PROFIL">
+            <sup class="site-nav__num">01</sup><span>PROFIL</span>
+          </a>
+          <a href="#aktivitas" class="site-nav__link" data-nav-link="aktivitas" data-scroll-to="#aktivitas" data-cursor-label="AKTIVITAS">
+            <sup class="site-nav__num">02</sup><span>AKTIVITAS</span>
+          </a>
+          <a href="#quote" class="site-nav__link" data-nav-link="quote" data-scroll-to="#quote" data-cursor-label="QUOTE">
+            <sup class="site-nav__num">03</sup><span>QUOTE</span>
+          </a>
+          <a href="#galeri" class="site-nav__link" data-nav-link="galeri" data-scroll-to="#galeri" data-cursor-label="GALERI">
+            <sup class="site-nav__num">04</sup><span>GALERI</span>
+          </a>
+          <a href="#kontak" class="site-nav__link" data-nav-link="kontak" data-scroll-to="#kontak" data-cursor-label="KONTAK">
+            <sup class="site-nav__num">05</sup><span>KONTAK</span>
+          </a>
+          <span class="site-nav__indicator" data-nav-indicator aria-hidden="true"></span>
+        </nav>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-menu-toggle
+        >
+          MENU
+        </button>
+      </div>
+    </header>
+
+    <!-- MOBILE FULL-SCREEN MENU OVERLAY -->
+    <div
+      class="mobile-menu"
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site navigation"
+      hidden
+      data-mobile-menu
+    >
+      <div class="mobile-menu__top">
+        <span class="site-logo">
+          <span class="site-logo__serif">Felix</span>
+          <span class="site-logo__script">A.</span>
+        </span>
+        <button type="button" class="menu-close" data-menu-close>CLOSE</button>
+      </div>
+      <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+        <a href="#profil" class="mobile-menu__link" data-mobile-link="#profil">
+          <span class="char-mask"><span class="mobile-menu__word"><em>01</em> Profil</span></span>
+        </a>
+        <a href="#aktivitas" class="mobile-menu__link" data-mobile-link="#aktivitas">
+          <span class="char-mask"><span class="mobile-menu__word"><em>02</em> Aktivitas</span></span>
+        </a>
+        <a href="#quote" class="mobile-menu__link" data-mobile-link="#quote">
+          <span class="char-mask"><span class="mobile-menu__word"><em>03</em> Quote</span></span>
+        </a>
+        <a href="#galeri" class="mobile-menu__link" data-mobile-link="#galeri">
+          <span class="char-mask"><span class="mobile-menu__word"><em>04</em> Galeri</span></span>
+        </a>
+        <a href="#kontak" class="mobile-menu__link" data-mobile-link="#kontak">
+          <span class="char-mask"><span class="mobile-menu__word"><em>05</em> Kontak</span></span>
+        </a>
+      </nav>
+      <div class="mobile-menu__foot">
+        <span>FELIX ALGORITHM</span>
+        <span lang="ja">フェリックス</span>
+      </div>
+    </div>
+
+    <main id="main-content">
+      <!-- SECTION 1 — HERO -->
+      <section class="hero" id="hero" aria-labelledby="hero-title" data-hero>
+        <div class="hero__frame" data-hero-frame>
+          <div class="hero__border" data-hero-border aria-hidden="true"></div>
+          <!-- Top-Left: Monogram + Jikoshoukai -->
+          <div class="hero__corner hero__top-left" data-hero-corner>
+            <div class="hero__monogram" aria-hidden="true">
+              <span class="hero__mono-top">FX</span>
+              <span class="hero__mono-num">36</span>
+              <span class="hero__mono-tag">REUTERS</span>
+            </div>
+            <span class="hero__mono-divider" aria-hidden="true"></span>
+            <div class="hero__jiko">
+              <p class="hero__jiko-title">
+                JIKOSHOUKAI <span class="hero__jiko-jp" lang="ja">自己紹介</span>
+              </p>
+              <p class="hero__jiko-text">
+                Seperti pizza yang dinanti-nantikan<br />
+                semua orang, selalu nantikan aku ya!<br />
+                Halo aku Felix!
+              </p>
+            </div>
+          </div>
+
+          <!-- Top-Right: Hanging Barcode Lines + Debut Date & Maker -->
+          <div class="hero__corner hero__top-right" data-hero-corner>
+            <div class="hero__barcode" aria-hidden="true" data-hero-barcode>
+              <span style="--bar-h: 22px"></span>
+              <span style="--bar-h: 50px"></span>
+              <span style="--bar-h: 116px"></span>
+              <span style="--bar-h: 78px"></span>
+              <span style="--bar-h: 104px"></span>
+              <span style="--bar-h: 132px"></span>
+              <span style="--bar-h: 68px"></span>
+              <span style="--bar-h: 28px"></span>
+            </div>
+            <div class="hero__debut">
+              <p class="hero__date">Hanoi, 10-11-2009</p>
+              <p class="hero__credit">Project By Felix Algorithm · Suit by Minny Minnie</p>
+            </div>
+          </div>
+
+          <!-- Center Stage: 3-Layer Editorial Weave -->
+          <div class="hero__stage">
+            <!-- Katakana above first letters -->
+            <p class="hero__katakana" lang="ja" data-hero-katakana>フェリックス</p>
+
+            <!-- Layer z1: Back Wordmark (Semantic H1) -->
+            <h1
+              id="hero-title"
+              class="hero__wordmark hero__wordmark--back"
+              aria-label="Felix Algorithm"
+              data-hero-wordmark-back
+            >
+              <span class="hero__letter"><span class="hero__letter-inner" data-hero-char>F</span></span>
+              <span class="hero__letter"><span class="hero__letter-inner" data-hero-char>E</span></span>
+              <span class="hero__letter"><span class="hero__letter-inner" data-hero-char>L</span></span>
+              <span class="hero__letter"><span class="hero__letter-inner" data-hero-char>I</span></span>
+              <span class="hero__letter"><span class="hero__letter-inner" data-hero-char>X</span></span>
+            </h1>
+
+            <!-- Layer z2: Transparent Fursuit Cutout (Bottom-anchored) -->
+            <figure class="hero__figure" data-hero-figure>
+              <img
+                src="/img/hero-cutout.png"
+                alt="Felix Algorithm in a cyan, navy, and cream Kemono fursuit holding white round glasses"
+                width="768"
+                height="1024"
+                fetchpriority="high"
+                decoding="async"
+                class="hero__cutout"
+                data-hero-cutout
+              />
+            </figure>
+
+            <!-- Layer z3: Front Wordmark Clone (Letters outside torso mask weave in front of cutout) -->
+            <div
+              class="hero__wordmark hero__wordmark--front"
+              aria-hidden="true"
+              data-hero-wordmark-front
+            >
+              <span class="hero__letter is-front"><span class="hero__letter-inner" data-hero-char-front>F</span></span>
+              <span class="hero__letter is-behind"><span class="hero__letter-inner" data-hero-char-front>E</span></span>
+              <span class="hero__letter is-behind"><span class="hero__letter-inner" data-hero-char-front>L</span></span>
+              <span class="hero__letter is-front"><span class="hero__letter-inner" data-hero-char-front>I</span></span>
+              <span class="hero__letter is-front"><span class="hero__letter-inner" data-hero-char-front>X</span></span>
+            </div>
+
+            <!-- Layer z4: Handwritten Secondary Script Name -->
+            <p class="hero__script" data-hero-script aria-hidden="true">Algorithm</p>
+          </div>
+
+          <!-- Bottom-Left: Current News -->
+          <div class="hero__corner hero__bottom-left" data-hero-corner>
+            <p class="hero__news-heading">Current News !!</p>
+            <p class="hero__news-copy">
+              Felix adalah programmer baru dan juga seorang Fursuiter,<br />
+              yang pemalu dengan orang-orang di sekitarnya.
+            </p>
+          </div>
+
+          <!-- Bottom-Right: The Question Is -->
+          <div class="hero__corner hero__bottom-right" data-hero-corner>
+            <p class="hero__question-heading">The Question Is:</p>
+            <p class="hero__question-copy">It’s not impossible, it’s just hard</p>
+            <p class="hero__question-author">~Felix Algorithm~</p>
+          </div>
+
+          <!-- Right Edge Middle: Vertical Scroll Cue -->
+          <div class="hero__scroll" aria-hidden="true" data-hero-corner>
+            <span class="hero__scroll-text">SCROLL</span>
+            <span class="hero__scroll-line"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2 — TILTED MARQUEE -->
+      <div class="marquee-wrap" role="region" aria-label="Character ticker" data-marquee-wrap>
+        <div class="marquee" data-marquee>
+          <div class="marquee__track" data-marquee-track>
+            <div class="marquee__group">
+              <span>Felix Algorithm</span><i class="marquee__star" aria-hidden="true">✦</i>
+              <span lang="ja" class="marquee__jp">フェリックス</span><i class="marquee__star" aria-hidden="true">✦</i>
+              <span>Kemono</span><i class="marquee__star" aria-hidden="true">✦</i>
+              <span>Minny Minnie</span><i class="marquee__star" aria-hidden="true">✦</i>
+              <span>Hanoi</span><i class="marquee__star" aria-hidden="true">✦</i>
+              <span>Felix Algorithm</span><i class="marquee__star" aria-hidden="true">✦</i>
+              <span lang="ja" class="marquee__jp">フェリックス</span><i class="marquee__star" aria-hidden="true">✦</i>
+              <span>Kemono</span><i class="marquee__star" aria-hidden="true">✦</i>
+              <span>Minny Minnie</span><i class="marquee__star" aria-hidden="true">✦</i>
+              <span>Hanoi</span><i class="marquee__star" aria-hidden="true">✦</i>
+            </div>
+            <div class="marquee__group" aria-hidden="true">
+              <span>Felix Algorithm</span><i class="marquee__star">✦</i>
+              <span lang="ja" class="marquee__jp">フェリックス</span><i class="marquee__star">✦</i>
+              <span>Kemono</span><i class="marquee__star">✦</i>
+              <span>Minny Minnie</span><i class="marquee__star">✦</i>
+              <span>Hanoi</span><i class="marquee__star">✦</i>
+              <span>Felix Algorithm</span><i class="marquee__star">✦</i>
+              <span lang="ja" class="marquee__jp">フェリックス</span><i class="marquee__star">✦</i>
+              <span>Kemono</span><i class="marquee__star">✦</i>
+              <span>Minny Minnie</span><i class="marquee__star">✦</i>
+              <span>Hanoi</span><i class="marquee__star">✦</i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3 — 01 PROFIL -->
+      <section class="section profil" id="profil" aria-labelledby="profil-heading">
+        <div class="container">
+          <div class="eyebrow" data-eyebrow>
+            <span class="eyebrow__line" data-line></span>
+            <span class="eyebrow__label">01 &nbsp; PROFIL</span>
+          </div>
+
+          <div class="profil__grid">
+            <!-- Portrait Column (4 cols + caption) -->
+            <div class="profil__media-col">
+              <figure class="profil__figure" data-image-reveal>
+                <img
+                  src="/img/profile.jpg"
+                  alt="Felix Algorithm fursuit waving beside a vintage painted wooden door"
+                  width="768"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  class="profil__img"
+                  data-parallax-img
+                />
+              </figure>
+              <div class="profil__caption">
+                <span>NO. 001 — PORTRAIT</span>
+                <span>FELIX</span>
+              </div>
+            </div>
+
+            <!-- Vertical Katakana Spine -->
+            <div class="profil__jp-col" aria-hidden="true">
+              <p class="profil__katakana" lang="ja" data-reveal-item>フェリックス</p>
+            </div>
+
+            <!-- Editorial Bio + 2x2 Table + Intro Callout -->
+            <div class="profil__content-col">
+              <h2 id="profil-heading" class="profil__heading">
+                <span class="line-mask"><span class="line-inner title-bodoni" data-mask-line>Halo, aku</span></span>
+                <span class="line-mask"><span class="line-inner title-vibes" data-mask-line>Felix!</span></span>
+              </h2>
+
+              <p class="profil__bio" data-mask-words>
+                Felix is a new developer and a passionate fursuiter who brings a unique blend of
+                logic and creativity to the table. Though naturally reserved and quiet at first, he
+                is a dedicated collaborator who thrives on meaningful connections. He is always
+                eager to learn, adapt, and grow alongside his team, proving that great ideas often
+                come from the most thoughtful minds.
+              </p>
+
+              <dl class="profil__specs" data-specs>
+                <div class="profil__spec">
+                  <span class="profil__spec-line" data-line></span>
+                  <dt class="profil__spec-label">NAMA</dt>
+                  <dd class="profil__spec-val" data-spec-val>Felix Algorithm</dd>
+                </div>
+                <div class="profil__spec">
+                  <span class="profil__spec-line" data-line></span>
+                  <dt class="profil__spec-label">LAHIR</dt>
+                  <dd class="profil__spec-val" data-spec-val>Hanoi, 10 November 2009</dd>
+                </div>
+                <div class="profil__spec">
+                  <span class="profil__spec-line" data-line></span>
+                  <dt class="profil__spec-label">STYLE</dt>
+                  <dd class="profil__spec-val" data-spec-val>Kemono</dd>
+                </div>
+                <div class="profil__spec">
+                  <span class="profil__spec-line" data-line></span>
+                  <dt class="profil__spec-label">MAKER</dt>
+                  <dd class="profil__spec-val" data-spec-val>
+                    <a
+                      href="https://www.facebook.com/share/1FLaXRjwQH/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="profil__maker-link"
+                      data-cursor-label="MAKER"
+                      >Minny Minnie</a
+                    >
+                  </dd>
+                </div>
+              </dl>
+
+              <blockquote class="profil__quote-box" data-reveal-quote>
+                <span class="profil__quote-rule" aria-hidden="true"></span>
+                <div class="profil__quote-body">
+                  <p class="profil__quote-eyebrow">
+                    JIKOSHOUKAI &nbsp;·&nbsp; <span lang="ja">自己紹介</span>
+                  </p>
+                  <p class="profil__quote-script">
+                    Seperti pizza yang dinanti-nantikan semua orang, selalu nantikan aku ya!
+                  </p>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4 — 02 AKTIVITAS -->
+      <section class="section aktivitas" id="aktivitas" aria-labelledby="aktivitas-heading">
+        <div class="container">
+          <div class="eyebrow" data-eyebrow>
+            <span class="eyebrow__line" data-line></span>
+            <span class="eyebrow__label">02 &nbsp; AKTIVITAS</span>
+          </div>
+
+          <div class="aktivitas__header">
+            <h2 id="aktivitas-heading" class="aktivitas__heading">
+              <span class="line-mask">
+                <span class="line-inner" data-mask-line>
+                  <span class="title-bodoni">Beyond the</span>
+                  <span class="title-pinyon">Code</span>
+                </span>
+              </span>
+            </h2>
+            <p class="aktivitas__sub" data-mask-words>
+              From convention floors to late-night sessions — the worlds and rituals where you can
+              find Felix.
+            </p>
+          </div>
+
+          <div class="aktivitas__list" data-activity-list>
+            <span class="aktivitas__divider" data-line></span>
+
+            <!-- Row 01 -->
+            <article
+              class="aktivitas__row"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              data-activity-row="0"
+              data-cursor-label="→"
+            >
+              <div class="aktivitas__row-inner">
+                <span class="aktivitas__index">(01)</span>
+                <h3 class="aktivitas__name">
+                  <span class="line-mask"><span class="line-inner" data-mask-line>Adventure</span></span>
+                </h3>
+                <p class="aktivitas__desc">
+                  Attending a furry convention, traveling, exploring.
+                </p>
+                <span class="circle-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 38 38" width="38" height="38">
+                    <circle class="circle-arrow__ring" cx="19" cy="19" r="18" />
+                    <path
+                      class="circle-arrow__icon"
+                      d="M13.5 19H24.5M24.5 19L20.5 15M24.5 19L20.5 23"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <figure class="aktivitas__touch-media">
+                <img
+                  src="/img/hover/convention.jpg"
+                  alt="Felix Algorithm at outdoor convention and travel"
+                  width="560"
+                  height="720"
+                  loading="lazy"
+                />
+              </figure>
+              <span class="aktivitas__divider" data-line></span>
+            </article>
+
+            <!-- Row 02 -->
+            <article
+              class="aktivitas__row"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              data-activity-row="1"
+              data-cursor-label="→"
+            >
+              <div class="aktivitas__row-inner">
+                <span class="aktivitas__index">(02)</span>
+                <h3 class="aktivitas__name">
+                  <span class="line-mask"><span class="line-inner" data-mask-line>Gaming &amp; Sports</span></span>
+                </h3>
+                <p class="aktivitas__desc">
+                  Shooter games and badminton.
+                </p>
+                <span class="circle-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 38 38" width="38" height="38">
+                    <circle class="circle-arrow__ring" cx="19" cy="19" r="18" />
+                    <path
+                      class="circle-arrow__icon"
+                      d="M13.5 19H24.5M24.5 19L20.5 15M24.5 19L20.5 23"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <figure class="aktivitas__touch-media">
+                <img
+                  src="/img/hover/shoot.jpg"
+                  alt="Gaming and sports placeholder preview"
+                  width="560"
+                  height="720"
+                  loading="lazy"
+                />
+              </figure>
+              <span class="aktivitas__divider" data-line></span>
+            </article>
+
+            <!-- Row 03 -->
+            <article
+              class="aktivitas__row"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              data-activity-row="2"
+              data-cursor-label="→"
+            >
+              <div class="aktivitas__row-inner">
+                <span class="aktivitas__index">(03)</span>
+                <h3 class="aktivitas__name">
+                  <span class="line-mask"><span class="line-inner" data-mask-line>Food &amp; Drinks</span></span>
+                </h3>
+                <p class="aktivitas__desc">
+                  Coffee and sweet treats.
+                </p>
+                <span class="circle-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 38 38" width="38" height="38">
+                    <circle class="circle-arrow__ring" cx="19" cy="19" r="18" />
+                    <path
+                      class="circle-arrow__icon"
+                      d="M13.5 19H24.5M24.5 19L20.5 15M24.5 19L20.5 23"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <figure class="aktivitas__touch-media">
+                <img
+                  src="/img/hover/meet.jpg"
+                  alt="Food and drinks placeholder preview"
+                  width="560"
+                  height="720"
+                  loading="lazy"
+                />
+              </figure>
+              <span class="aktivitas__divider" data-line></span>
+            </article>
+          </div>
+        </div>
+
+        <!-- Floating Hover Thumbnail (Desktop pointer: fine) -->
+        <div class="activity-float" data-activity-float aria-hidden="true">
+          <div class="activity-float__inner" data-activity-float-inner>
+            <img
+              src="/img/hover/convention.jpg"
+              alt=""
+              width="560"
+              height="720"
+              loading="lazy"
+              class="activity-float__img is-active"
+              data-float-img="0"
+            />
+            <img
+              src="/img/hover/shoot.jpg"
+              alt=""
+              width="560"
+              height="720"
+              loading="lazy"
+              class="activity-float__img"
+              data-float-img="1"
+            />
+            <img
+              src="/img/hover/meet.jpg"
+              alt=""
+              width="560"
+              height="720"
+              loading="lazy"
+              class="activity-float__img"
+              data-float-img="2"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5 — 03 QUOTE (Dark Stage) -->
+      <section
+        class="quote-section"
+        id="quote"
+        data-dark-section
+        aria-labelledby="quote-heading"
+      >
+        <div class="quote-section__sticky">
+          <p class="quote-section__watermark" lang="ja" aria-hidden="true">フェリックス</p>
+
+          <div class="container quote-section__inner">
+            <div class="eyebrow eyebrow--center eyebrow--dark" id="quote-heading">
+              <span class="eyebrow__line" data-line></span>
+              <span class="eyebrow__label">03 &nbsp; THE QUESTION IS</span>
+            </div>
+
+            <blockquote class="quote-section__blockquote">
+              <p class="quote-section__text" data-scrub-quote>
+                It’s not impossible, it’s just hard.
+              </p>
+              <footer class="quote-section__sign">~Felix Algorithm~</footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6 — 04 GALERI (Pinned Horizontal Scroll) -->
+      <section class="galeri" id="galeri" aria-labelledby="galeri-heading" data-gallery-section>
+        <div class="galeri__stage">
+          <div class="container galeri__top">
+            <div class="galeri__title-block">
+              <div class="eyebrow" data-eyebrow>
+                <span class="eyebrow__line" data-line></span>
+                <span class="eyebrow__label">04 &nbsp; GALERI</span>
+              </div>
+              <h2 id="galeri-heading" class="galeri__heading">
+                <span class="line-mask">
+                  <span class="line-inner" data-mask-line>
+                    <span class="title-bodoni">Potret</span>
+                    <span class="title-pinyon">Felix</span>
+                  </span>
+                </span>
+              </h2>
+            </div>
+
+            <p class="galeri__hint">
+              GESER UNTUK MELIHAT <span aria-hidden="true">→</span>
+            </p>
+          </div>
+
+          <div class="galeri__viewport" data-gallery-viewport>
+            <div class="galeri__track" data-gallery-track>
+              <!-- Card 01 -->
+              <article class="galeri-card" data-cursor-label="01">
+                <figure class="galeri-card__frame">
+                  <img
+                    src="/img/gallery/01.jpg"
+                    alt="Felix Algorithm gallery placeholder 01 — Street"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                    class="galeri-card__img"
+                    data-gallery-img
+                  />
+                </figure>
+                <div class="galeri-card__meta">
+                  <span>NO. 01</span>
+                  <span>STREET</span>
+                </div>
+              </article>
+
+              <!-- Card #2: Signature Dark Editorial Katakana Card -->
+              <article class="galeri-card galeri-card--editorial" aria-label="Felix Algorithm Kemono Identity Card">
+                <div class="galeri-card__ink-box">
+                  <span class="galeri-card__ink-top">KEMONO — FURSUIT</span>
+                  <p class="galeri-card__ink-jp" lang="ja">フェリックス</p>
+                  <span class="galeri-card__ink-bottom">FELIX ALGORITHM</span>
+                </div>
+                <div class="galeri-card__meta">
+                  <span>EDITION</span>
+                  <span>HANOI</span>
+                </div>
+              </article>
+
+              <!-- Card 02 -->
+              <article class="galeri-card" data-cursor-label="02">
+                <figure class="galeri-card__frame">
+                  <img
+                    src="/img/gallery/02.jpg"
+                    alt="Felix Algorithm gallery placeholder 02 — Selfie"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                    class="galeri-card__img"
+                    data-gallery-img
+                  />
+                </figure>
+                <div class="galeri-card__meta">
+                  <span>NO. 02</span>
+                  <span>SELFIE</span>
+                </div>
+              </article>
+
+              <!-- Card 03 -->
+              <article class="galeri-card" data-cursor-label="03">
+                <figure class="galeri-card__frame">
+                  <img
+                    src="/img/gallery/03.jpg"
+                    alt="Felix Algorithm gallery placeholder 03 — Editorial"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                    class="galeri-card__img"
+                    data-gallery-img
+                  />
+                </figure>
+                <div class="galeri-card__meta">
+                  <span>NO. 03</span>
+                  <span>EDITORIAL</span>
+                </div>
+              </article>
+
+              <!-- Card 04 -->
+              <article class="galeri-card" data-cursor-label="04">
+                <figure class="galeri-card__frame">
+                  <img
+                    src="/img/gallery/04.jpg"
+                    alt="Felix Algorithm gallery placeholder 04 — Convention"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                    class="galeri-card__img"
+                    data-gallery-img
+                  />
+                </figure>
+                <div class="galeri-card__meta">
+                  <span>NO. 04</span>
+                  <span>CONVENTION</span>
+                </div>
+              </article>
+
+              <!-- Card 05 -->
+              <article class="galeri-card" data-cursor-label="05">
+                <figure class="galeri-card__frame">
+                  <img
+                    src="/img/gallery/05.jpg"
+                    alt="Felix Algorithm gallery placeholder 05 — Studio"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                    class="galeri-card__img"
+                    data-gallery-img
+                  />
+                </figure>
+                <div class="galeri-card__meta">
+                  <span>NO. 05</span>
+                  <span>STUDIO</span>
+                </div>
+              </article>
+
+              <!-- Card 06 -->
+              <article class="galeri-card" data-cursor-label="06">
+                <figure class="galeri-card__frame">
+                  <img
+                    src="/img/gallery/06.jpg"
+                    alt="Felix Algorithm gallery placeholder 06 — Outdoor"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                    class="galeri-card__img"
+                    data-gallery-img
+                  />
+                </figure>
+                <div class="galeri-card__meta">
+                  <span>NO. 06</span>
+                  <span>OUTDOOR</span>
+                </div>
+              </article>
+
+              <!-- Card 07 -->
+              <article class="galeri-card" data-cursor-label="07">
+                <figure class="galeri-card__frame">
+                  <img
+                    src="/img/gallery/07.jpg"
+                    alt="Felix Algorithm gallery placeholder 07 — Meetup"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                    class="galeri-card__img"
+                    data-gallery-img
+                  />
+                </figure>
+                <div class="galeri-card__meta">
+                  <span>NO. 07</span>
+                  <span>MEETUP</span>
+                </div>
+              </article>
+
+              <!-- Card 08 -->
+              <article class="galeri-card" data-cursor-label="08">
+                <figure class="galeri-card__frame">
+                  <img
+                    src="/img/gallery/08.jpg"
+                    alt="Felix Algorithm gallery placeholder 08 — Portrait"
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                    class="galeri-card__img"
+                    data-gallery-img
+                  />
+                </figure>
+                <div class="galeri-card__meta">
+                  <span>NO. 08</span>
+                  <span>PORTRAIT</span>
+                </div>
+              </article>
+
+              <!-- End of Track Cursive Epilogue -->
+              <div class="galeri__epilogue" aria-hidden="true">
+                <p class="galeri__epilogue-script">
+                  Selalu nantikan<br />aku ya!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SECTION 7 — 05 KONTAK + FOOTER -->
+    <footer class="kontak" id="kontak" data-dark-section aria-labelledby="kontak-heading">
+      <div class="container">
+        <div class="eyebrow eyebrow--dark" data-eyebrow>
+          <span class="eyebrow__line" data-line></span>
+          <span class="eyebrow__label">05 &nbsp; KONTAK</span>
+        </div>
+
+        <h2 id="kontak-heading" class="kontak__heading">
+          <span class="line-mask"><span class="line-inner title-bodoni" data-mask-line>Terima kasih sudah</span></span>
+          <span class="line-mask"><span class="line-inner title-pinyon" data-mask-line>mampir!</span></span>
+        </h2>
+
+        <!-- 4 Social Links Row -->
+        <nav class="kontak__socials" aria-label="Social media links">
+          <a
+            href="https://www.facebook.com/share/1FotC7Rj7u/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="kontak__social"
+            data-cursor-label="OPEN"
+          >
+            <span class="kontak__social-fill" aria-hidden="true"></span>
+            <span class="kontak__social-name">Facebook</span>
+            <span class="kontak__social-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            href="https://x.com/felixpham_cute"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="kontak__social"
+            data-cursor-label="OPEN"
+          >
+            <span class="kontak__social-fill" aria-hidden="true"></span>
+            <span class="kontak__social-name">X / Twitter</span>
+            <span class="kontak__social-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            href="https://tiktok.com/@algorithmfelix"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="kontak__social"
+            data-cursor-label="OPEN"
+          >
+            <span class="kontak__social-fill" aria-hidden="true"></span>
+            <span class="kontak__social-name">TikTok</span>
+            <span class="kontak__social-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            href="https://discord.com/users/1028499565306974218"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="kontak__social"
+            data-cursor-label="OPEN"
+          >
+            <span class="kontak__social-fill" aria-hidden="true"></span>
+            <span class="kontak__social-name">Discord</span>
+            <span class="kontak__social-arrow" aria-hidden="true">↗</span>
+          </a>
+        </nav>
+
+        <!-- 3-Column Meta Row -->
+        <div class="kontak__meta">
+          <p class="kontak__meta-left">PROJECT BY FELIX ALGORITHM</p>
+          <p class="kontak__meta-center">Hanoi, 10-11-2009</p>
+          <div class="kontak__meta-right">
+            <button
+              type="button"
+              class="kontak__backtop"
+              data-back-to-top
+              data-cursor-label="TOP"
+            >
+              <span class="kontak__backtop-label">KEMBALI KE ATAS</span>
+              <span class="circle-arrow circle-arrow--dark" aria-hidden="true">
+                <svg viewBox="0 0 38 38" width="36" height="36">
+                  <circle class="circle-arrow__ring" cx="19" cy="19" r="18" />
+                  <path
+                    class="circle-arrow__icon"
+                    d="M19 24.5V13.5M19 13.5L15 17.5M19 13.5L23 17.5"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Giant Full-Width Wordmark -->
+        <div class="kontak__wordmark-box" data-footer-wordmark-box>
+          <p class="kontak__wordmark" data-footer-wordmark><span class="sr-only">FELIX</span><span class="char-mask" aria-hidden="true"><span class="kontak__char" data-footer-char>F</span></span><span class="char-mask" aria-hidden="true"><span class="kontak__char" data-footer-char>E</span></span><span class="char-mask" aria-hidden="true"><span class="kontak__char" data-footer-char>L</span></span><span class="char-mask" aria-hidden="true"><span class="kontak__char" data-footer-char>I</span></span><span class="char-mask" aria-hidden="true"><span class="kontak__char" data-footer-char>X</span></span></p>
+        </div>
+
+        <p class="kontak__copyright">
+          © 2026 FELIX ALGORITHM — FELIX PORTFOLIO
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
